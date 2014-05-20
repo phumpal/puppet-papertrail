@@ -64,13 +64,13 @@ class papertrail (
     ensure  => $remote_syslog_file,
     content => template('papertrail/log_files.yml.erb'),
     path    => '/etc/log_files.yml',
-    require => File['remote_syslog upstart script'],
-    notify  => Service['remote_syslog'],
+#    require => File['remote_syslog upstart script'],
+#    notify  => Service['remote_syslog'],
   }
 
-  service { 'remote_syslog':
-    ensure      => $remote_syslog_status,
-    provider    => 'upstart',
-    require     => File['remote_syslog upstart script'],
-  }
+#  service { 'remote_syslog':
+#    ensure      => $remote_syslog_status,
+#    provider    => 'upstart',
+#    require     => File['remote_syslog upstart script'],
+#  }
 }
