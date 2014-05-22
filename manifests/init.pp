@@ -50,15 +50,15 @@ class papertrail (
     path   => '/etc/init/remote_syslog.conf',
   }
 
-  $remote_syslog_status = empty($extra_logs) ? {
-    true  => stopped,
-    false => running
-  }
+#  $remote_syslog_status = empty($extra_logs) ? {
+#    true  => stopped,
+#    false => running
+#  }
 
-  $remote_syslog_file = empty($extra_logs) ? {
-    true  => absent,
-    false => file
-  }
+#  $remote_syslog_file = empty($extra_logs) ? {
+#    true  => absent,
+#    false => file
+#  }
 
   file { 'remote_syslog config':
     ensure  => $remote_syslog_file,
